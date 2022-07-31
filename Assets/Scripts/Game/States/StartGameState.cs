@@ -17,4 +17,12 @@ public class StartGameState : BaseState
     {
         result.text = "Start Game";
     }
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        if (gameStateMachine.responses.Count == PhotonNetwork.CurrentRoom.PlayerCount)
+        {
+            gameStateMachine.gameController.GetResult();
+        }
+    }
 }

@@ -7,12 +7,10 @@ using UnityEngine.UI;
 public class WaitForStartState : BaseState
 {
     private GameSM gameStateMachine;
-    private GameController gameController;
     private Text result;
-    public WaitForStartState(GameSM gameSM, GameController gameController) : base(gameSM)
+    public WaitForStartState(GameSM gameSM) : base(gameSM)
     {
         gameStateMachine = gameSM;
-        this.gameController = gameController;
         result = GameObject.Find("Result").GetComponent<Text>();
     }
     public override void Enter()
@@ -26,7 +24,7 @@ public class WaitForStartState : BaseState
         if (PhotonNetwork.IsMasterClient && Input.GetKeyDown(KeyCode.Space))
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
-            gameController.StartGame();
+            gameStateMachine.gameController.StartGame();
         }
     }
 }

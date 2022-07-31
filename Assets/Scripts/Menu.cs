@@ -14,7 +14,7 @@ public class Menu : MonoBehaviourPunCallbacks
     }
     public void OnClick_CreateGame()
     {
-        RoomOptions ro = new RoomOptions() { MaxPlayers = 3 };
+        RoomOptions ro = new RoomOptions() { MaxPlayers = 3, BroadcastPropsChangeToAll = true };
         PhotonNetwork.NickName = "sae#" + Random.Range(0, 9999);
         PhotonNetwork.CreateRoom("abc", ro, TypedLobby.Default);
     }

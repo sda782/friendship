@@ -38,6 +38,7 @@ MonoBehaviour:
   - DestroyRpc
   - StartGame
   - RPC_StartGame
+  - RPC_GetResult
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
